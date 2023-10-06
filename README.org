@@ -1,0 +1,28 @@
+#+title: Readme
+#+author: Manuel Albisu
+
+* Table of Contents :TOC:
+- [[#getting-started][Getting Started]]
+
+* Getting Started :TOC:
+Follow [[https://docs.nvidia.com/ai-enterprise/deployment-guide-vmware/0.1.0/docker.html][this guide]] to setup the Docker Utility Engine for NVIDIA GPU's before continuing.
+
+Make sure you have docker installed:
+
+#+begin_src shell
+sudo apt install docker nvidia-docker2
+#+end_src
+
+Create and add yourself as a user of the docker group and change the permissions on the docker socket:
+
+#+begin_src shell
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo chmod 664 /var/run/docker.sock
+#+end_src
+
+Restart the docker service:
+
+#+begin_src shell
+sudo systemctl restart docker
+#+end_src
